@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moctale Random Picker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">MOCTALE TOP 100</p>
+        <h1>What should I watch?</h1>
+      </div>
+      <nav>
+        <button class="nav-btn active" data-tab="picker">Picker</button>
+        <button class="nav-btn" data-tab="history">History <span id="historyCount">0</span></button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="pickerTab" class="tab active">
+        <div class="hero-card">
+          <div class="wheel-wrap">
+            <div class="pointer"></div>
+            <div id="wheel" class="wheel">
+              <div class="wheel-center"><span>?</span></div>
+            </div>
+          </div>
+
+          <div class="result-area">
+            <p class="muted">YOUR NEXT MOVIE</p>
+            <div id="resultNumber" class="result-number">—</div>
+            <h2 id="resultTitle">Spin the wheel</h2>
+            <p id="resultYear" class="result-year"></p>
+            <p id="resultStatus" class="status">Pick something from the Moctale Top 100.</p>
+            <button id="spinBtn" class="spin-btn">SPIN</button>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div><span class="info-label">Pool</span><strong>Top 100</strong></div>
+          <div><span class="info-label">Rule</span><strong>Never repeat</strong></div>
+          <div><span class="info-label">Sync</span><strong id="syncState">Connecting…</strong></div>
+        </div>
+
+        <p class="footnote">A number already in history is automatically rejected and another number is selected.</p>
+      </section>
+
+      <section id="historyTab" class="tab">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">YOUR WATCH HISTORY</p>
+            <h2>Previously picked</h2>
+          </div>
+          <button id="clearHistoryBtn" class="ghost-btn">Clear history</button>
+        </div>
+        <div id="historyList" class="history-list"><div class="empty-state">Loading…</div></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="movies.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
